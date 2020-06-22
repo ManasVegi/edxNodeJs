@@ -8,6 +8,6 @@ fs.readFile(path.join(__dirname, 'customer-data.xls'), {encoding: 'utf-8'}, (err
     }
     //console.log(data)
     const jsonObj = csvjson.toObject(data)
-    const result = JSON.stringify(jsonObj)
+    const result = JSON.stringify(jsonObj, null, 2)
     fs.writeFileSync(path.join(__dirname, 'customer-data.json'), result)
 })
